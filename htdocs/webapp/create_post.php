@@ -1,0 +1,1 @@
+<h2>Create New Post</h2>
