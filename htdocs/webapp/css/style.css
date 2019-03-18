@@ -9,3 +9,8 @@
 }
 
 /* End Login Form Style */
+
+.welcome-msg{
+	color:blueviolet;
+	font-style:italic;
+}

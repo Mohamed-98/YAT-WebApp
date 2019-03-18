@@ -33,7 +33,28 @@
  	  	
  	  	  <div class="panel panel-default">
 		    <div class="panel-heading">
-			   <h3 class="panel-title">Page Title</h3>
+			   <h3 class="panel-title">
+				  <?php
+				     if(isset($_GET['page'])){
+						 switch($_GET['page']){
+							 case 'create_user.php':
+								 echo 'Create New User';
+								 break;
+							 case 'create_post.php':
+								  echo 'Create New Post';
+								 break;
+							 case 'manage_posts.php':
+								 echo 'Post Management';
+								 break;
+							 case 'search.php':
+								 echo 'Search';
+								 break;
+						 }
+					 }else{
+						 echo 'Main Page';
+					 }
+				   ?>
+			   </h3>
 		    </div>
 		    <div class="panel-body">
 			 <?php
