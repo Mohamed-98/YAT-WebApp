@@ -1,20 +1,35 @@
 <?php 
-  include('header.php');
- 
+ $title = 'Login'; 
+ include('header.php');
+  
   /*if(isset($_GET['submit'])){
 	  echo 'Welcome ' . $_GET['username'];
   }*/
-
+  
   if(isset($_POST['submit']))
   {
 	  $usname = $_POST['username'];
-	  $welcome =  'Welcome ' .$usname ;
+	  $uspass = $_POST['password'];
+	  
+	  if($usname ==''){
+		  $errors[] = 'Username field is required';
+	  }
+	  
+	  if($uspass == ''){
+		  $errors[] = 'Password field is required';
+	  }
   }
 ?>
  <div class="container">
  	
  	<form class="login-form"  method="post">
- 	    
+ 	    <?php
+		if(!empty($errors)){
+		  for($i=0;$i<count($errors);$i++){
+			  echo "<ul><li> $errors[$i] </li></ul>";
+		  }
+		}
+		?>
 		<h3>Login Area</h3>
  		<input class="form-control" type="text" name="username" placeholder="Enter your username" 
 			  value="<?php if(isset($usname)) echo $usname ; ?>"  >
@@ -28,12 +43,10 @@
 				echo '<p class="welcome-msg">' . $welcome . '</p>';
 			
 			}
-		?>
+		?>	
  	</form>
  	
  </div>
-<?php
- include('footer.php');
-?>
+<?php include('footer.php'); ?>
 
 

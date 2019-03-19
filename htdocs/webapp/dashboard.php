@@ -1,6 +1,7 @@
 
-<?php
-  include('header.php');
+<?php 
+$title = 'Dashboard';
+include('header.php'); 
 ?>
  <div class="container">
  	<!-- Grid System -->
@@ -19,7 +20,9 @@
 				   </span> Create Post</a>
 			  
 			   <a href="dashboard.php?page=manage_posts.php" class="list-group-item">
-				   <span class="glyphicon glyphicon-cog"></span> Posts Management</a>
+				   <span class="glyphicon glyphicon-cog"></span> Posts Management
+			       <span class="badge"><?php echo returnTotalPosts() ?></span>
+			   </a>
 			  
 			   <a href="dashboard.php?page=search.php" class="list-group-item">
 				   <span class="glyphicon glyphicon-search" ></span> Search</a>
@@ -74,7 +77,5 @@
  	
 	 </div><!-- End Row -->
  </div><!-- End Container  -->
-<?php 
- include('footer.php');
-?>
+<?php include('footer.php'); ?>
 
