@@ -17,7 +17,7 @@
   2- Assocciative Indexed Array 
 */
 
-//               0     1     2     3
+//                 0     1     2     3
 //$data = array('Ahmed',20,1000.565,true);
 $data = array();
 //..
