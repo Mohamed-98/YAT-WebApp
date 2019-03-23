@@ -1,4 +1,5 @@
 <?php
+include('config.php');
 function setTitle()
 {
 	global $title;
@@ -11,5 +12,9 @@ function setTitle()
 
 function returnTotalPosts()
 {
-	return 10;
+	global $connect;
+	$sql = "SELECT COUNT(*) FROM posts";
+	$stmt = $connect->query($sql);
+	$result = $stmt->fetchColumn();
+	return $result;
 }

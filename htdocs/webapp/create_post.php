@@ -5,7 +5,7 @@
 	  $content = $_POST['content'];
 	  
 	  $connect->exec("INSERT INTO `posts`(`post_id`, `title`, `content`, `created_date`, `user_id`)
-	    VALUES (NULL,'$title','$content',NOW(),3)");
+	    VALUES (NULL,'$title','$content',NOW(),2)");
 	
 	  echo 'Post Created Successfuly..';
   }
