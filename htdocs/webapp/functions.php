@@ -13,7 +13,7 @@ function setTitle()
 function returnTotalPosts()
 {
 	global $connect;
-	$sql = "SELECT COUNT(*) FROM `posts`";
+	$sql = "SELECT COUNT(*) FROM posts";
 	$stmt = $connect->query($sql);
 	$result = $stmt->fetchColumn();
 	return $result;

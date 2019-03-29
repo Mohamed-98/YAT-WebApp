@@ -1,1 +1,1 @@
-<h2>Serach..</h2>
+<input class="form-control" type="text" id="search" placeholder="Search">

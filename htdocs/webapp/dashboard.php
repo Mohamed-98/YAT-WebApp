@@ -1,3 +1,4 @@
+
 <?php 
 $title = 'Dashboard';
 include('header.php'); 
@@ -50,6 +51,9 @@ include('header.php');
 								 break;
 							 case 'search.php':
 								 echo 'Search';
+								 break;
+							 case 'edit_post.php':
+								 echo 'Edit Post';
 								 break;
 						 }
 					 }else{
