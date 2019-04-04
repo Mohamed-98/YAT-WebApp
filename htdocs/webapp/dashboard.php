@@ -1,15 +1,25 @@
 
 <?php 
+session_start();
 $title = 'Dashboard';
 include('header.php'); 
 ?>
  <div class="container">
+	 
+	<div class="row">
+	 
+		Welcome, <?= $_SESSION['userType'] ?>
+	   
+	 </div> 
+	 <br><br>	
  	<!-- Grid System -->
  	<div class="row">
  	
  	  <div class="col-md-3">
  	  	   <!-- Side bar -->
- 	  	   <div class="list-group">
+		  <?php
+		  if(isset($_SESSION['userType']) && $_SESSION['userType']=='admin') { ?>
+ 	  	      <div class="list-group">
 			   <a href="#" class="list-group-item active"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a>
 			  
 			   <a href="dashboard.php?page=create_user.php" 
@@ -29,7 +39,36 @@ include('header.php');
 			  
 			   <a href="#" class="list-group-item"><span class="glyphicon glyphicon-log-out"></span> Sign out</a>
 			</div>
- 	  	
+		  <?php } else if(isset($_SESSION['userType']) && $_SESSION['userType'] =='editor') { ?>
+		        <div class="list-group">
+			   <a href="#" class="list-group-item active"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a>
+			  
+			   <a href="dashboard.php?page=create_user.php" 
+				  class="list-group-item"><span class="glyphicon glyphicon-user"></span> Create user</a>
+			  
+			   <a href="dashboard.php?page=create_post.php" 
+				  class="list-group-item"><span class="glyphicon glyphicon-plus-sign">
+				   </span> Create Post</a>
+			  
+			   <a href="#" class="list-group-item"><span class="glyphicon glyphicon-log-out"></span> Sign out</a>
+			</div>
+		  
+		  <?php } else { ?>
+                  <div class="list-group">
+				   <a href="#" class="list-group-item active"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a>
+
+				   <a href="dashboard.php?page=manage_posts.php" class="list-group-item">
+					   <span class="glyphicon glyphicon-cog"></span> Posts Management
+					   <span class="badge"><?php echo returnTotalPosts() ?></span>
+				   </a>
+
+				   <a href="dashboard.php?page=search.php" class="list-group-item">
+					   <span class="glyphicon glyphicon-search" ></span> Search</a>
+
+				   <a href="#" class="list-group-item"><span class="glyphicon glyphicon-log-out"></span> Sign out</a>
+			   </div>
+		  
+		  <?php } ?>
  	  </div>
  	  
  	  <div class="col-md-9">
