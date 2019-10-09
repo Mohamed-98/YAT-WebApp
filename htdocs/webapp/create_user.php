@@ -9,7 +9,7 @@ if(isset($_POST['submit'])){
 	$role = $_POST['userType'];
 	
 	$addUser = "INSERT INTO `users`(`user_id`, `first_name`, `last_name`, `user_name`, `user_pass`,    `user_type`) 
-	VALUES (NULL,'$fname','$lname','$usname','$uspass','$role')";
+	                           VALUES (NULL,'$fname','$lname','$usname','$uspass','$role')";
 	
 	$connect->exec($addUser);
 	echo 'User Created Successfuly..';
